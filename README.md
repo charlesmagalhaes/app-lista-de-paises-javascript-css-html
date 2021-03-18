@@ -4,7 +4,7 @@
 
 São 250 países.
 
-
+![alt text](https://user-images.githubusercontent.com/67280323/111564957-6037e300-8779-11eb-85c7-766ef29a8824.jpg)
 
 ## Tecnologia envolvida
 
@@ -27,4 +27,4 @@ São duas colunas, a primeira tem a lista de todos os países e a segunda fica v
 
 ## API's para alimentação dos dados
 Para visualziação dos dados, foi utilizada a api em Rest para visualização dos dados necessários, neste [link]:
-- https://restcountries.eu/rest/v2/all
+- https://restcountries.eu/rest/v2/all![listaDePaises]
