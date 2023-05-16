@@ -24,24 +24,25 @@ window.addEventListener('load', () => {
 
   numberFormat = Intl.NumberFormat('pt-BR');
 
-  fetchContries();
+  fetchCountries();
 });
 
-async function fetchContries() {
-  const res = await fetch('https://restcountries.eu/rest/v2/all');
+async function fetchCountries() {
+  const res = await fetch('https://restcountries.com/v3.1/all');
   const json = await res.json();
-  allCountries = json.map(country=>{
-    const {name, population, flag, numericCode} = country;
-    return{
-      id: numericCode,
-      name,
-      population,
+  allCountries = json.map(country => {
+    const { name, population, flags, cca3 } = country;
+    return {
+      id: cca3,
+      name: name.common,
+      population: population,
       formattedPopulation: formatNumber(population),
-      flag,
+      flag: flags.png
     };
   });
   render();
 }
+
 
 function render() {
   renderCountryList();
@@ -52,7 +53,7 @@ function render() {
 
 function renderCountryList() {
   let countriesHTML = '<div>';
-  
+  console.log(allCountries);
   allCountries.forEach(country =>{
     const {name, flag, id, population, formattedPopulation} = country;
 
